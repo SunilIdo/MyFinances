@@ -27,6 +27,7 @@ public class MainActivity extends AppCompatActivity {
         enableAllInput();
         disableInput(R.id.txtPaymentAmt);
     }
+
     public void onCheckingClick(View view) {
         clearAllInput();
         enableAllInput();
@@ -34,10 +35,12 @@ public class MainActivity extends AppCompatActivity {
         disableInput(R.id.txtInterestRate);
         disableInput(R.id.txtPaymentAmt);
     }
+
     public void onLoanClick(View view) {
         clearAllInput();
         enableAllInput();
     }
+
     public void onSaveClick(View view) {
         //save data
         boolean isSuccess = false;
@@ -82,6 +85,8 @@ public class MainActivity extends AppCompatActivity {
 
     public void onCancelClick(View view) {
         clearAllInput();
+        RadioGroup rdGroup = (RadioGroup) findViewById(R.id.grpAccountType);
+        rdGroup.clearCheck();
     }
 
     public void onViewClick(View view) {
@@ -128,6 +133,7 @@ public class MainActivity extends AppCompatActivity {
         Cursor res = db.getDataByAccountNo(accNo);
         return res.getCount() > 0;
     }
+
     private Account getAccount() {
         Account acc = new Account();
         RadioGroup rdGroup = (RadioGroup) findViewById(R.id.grpAccountType);
@@ -141,7 +147,6 @@ public class MainActivity extends AppCompatActivity {
         acc.setAccountNumber(Integer.parseInt(txtAccNo.getText().toString()));
         acc.setAccountType(accountType);
         acc.setCurrentBalance(Double.parseDouble(txtCurrentBal.getText().toString()));
-
         switch (accountType) {
             case "CD":
                 acc.setInitialBalance(Double.parseDouble(txtInitBal.getText().toString()));
@@ -157,6 +162,7 @@ public class MainActivity extends AppCompatActivity {
         }
         return acc;
     }
+
     private void clearAllInput() {
         EditText txtPmtAmt = (EditText) findViewById(R.id.txtPaymentAmt);
         EditText txtAccNo = (EditText) findViewById(R.id.txtAccNo);
@@ -169,6 +175,7 @@ public class MainActivity extends AppCompatActivity {
         txtInterestRate.setText("");
         txtAccNo.setText("");
     }
+
     private void enableAllInput() {
         EditText txtPmtAmt = (EditText) findViewById(R.id.txtPaymentAmt);
         EditText txtInitBal = (EditText) findViewById(R.id.txtInitialBal);
@@ -179,6 +186,7 @@ public class MainActivity extends AppCompatActivity {
         txtCurrentBal.setEnabled(true);
         txtInterestRate.setEnabled(true);
     }
+
     private void disableInput(int id) {
         EditText txtInput = (EditText) findViewById(id);
         txtInput.setEnabled(false);
