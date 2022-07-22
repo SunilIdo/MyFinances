@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <RadioGroup
+        android:id="@+id/grpAccountType"
+        android:layout_width="275dp"
+        android:layout_height="54dp"
+        android:layout_marginTop="16dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.882"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0">
+
+        <RadioButton
+            android:id="@+id/rbtnCD"
+            android:layout_width="75dp"
+            android:layout_height="wrap_content"
+            android:onClick="onCDClick"
+            android:text="CD" />
+
+        <RadioButton
+            android:id="@+id/rbtnChecking"
+            android:layout_width="111dp"
+            android:layout_height="wrap_content"
+            android:onClick="onCheckingClick"
+            android:text="Checking" />
+
+        <RadioButton
+            android:id="@+id/rbtnLoan"
+            android:layout_width="78dp"
+            android:layout_height="wrap_content"
+            android:onClick="onLoanClick"
+            android:text="Loan" />
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="100dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="42dp"
+        android:layout_marginBottom="8dp"
+        android:gravity="center_vertical"
+        android:text="Account No."
+        android:textAlignment="textEnd"
+        app:layout_constraintBottom_toTopOf="@+id/textView2"
+        app:layout_constraintEnd_toStartOf="@+id/txtAccNo"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/grpAccountType" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="100dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="60dp"
+        android:layout_marginEnd="42dp"
+        android:layout_marginBottom="8dp"
+        android:gravity="center_vertical"
+        android:text="Initial Balance"
+        android:textAlignment="textEnd"
+        app:layout_constraintBottom_toTopOf="@+id/textView3"
+        app:layout_constraintEnd_toStartOf="@+id/txtInitialBal"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="110dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="60dp"
+        android:layout_marginEnd="42dp"
+        android:layout_marginBottom="8dp"
+        android:gravity="center_vertical"
+        android:text="Current Balance"
+        android:textAlignment="textEnd"
+        app:layout_constraintBottom_toTopOf="@+id/textView5"
+        app:layout_constraintEnd_toStartOf="@+id/txtCurrentBal"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+    <EditText
+        android:id="@+id/txtInitialBal"
+        android:layout_width="150dp"
+        android:layout_height="48dp"
+        android:layout_marginEnd="54dp"
+        android:layout_marginBottom="8dp"
+        android:ems="10"
+        android:hint="Initial Balance"
+        android:inputType="numberDecimal"
+        app:layout_constraintBottom_toTopOf="@+id/txtCurrentBal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtAccNo" />
+
+    <EditText
+        android:id="@+id/txtCurrentBal"
+        android:layout_width="150dp"
+        android:layout_height="48dp"
+        android:layout_marginEnd="56dp"
+        android:layout_marginBottom="8dp"
+        android:ems="10"
+        android:hint="Current Balance"
+        android:inputType="numberDecimal"
+        app:layout_constraintBottom_toTopOf="@+id/txtInterestRate"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtInitialBal" />
+
+    <EditText
+        android:id="@+id/txtPaymentAmt"
+        android:layout_width="150dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="54dp"
+        android:ems="10"
+        android:hint="Payment Amount"
+        android:inputType="numberDecimal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtInterestRate" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="110dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="42dp"
+        android:gravity="center_vertical"
+        android:text="Payment Amount"
+        android:textAlignment="textEnd"
+        app:layout_constraintEnd_toStartOf="@+id/txtPaymentAmt"
+        app:layout_constraintHorizontal_bias="0.6"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView5" />
+
+    <EditText
+        android:id="@+id/txtAccNo"
+        android:layout_width="150dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="54dp"
+        android:layout_marginBottom="8dp"
+        android:ems="10"
+        android:hint="Account No."
+        android:inputType="number"
+        app:layout_constraintBottom_toTopOf="@+id/txtInitialBal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/grpAccountType" />
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="110dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="60dp"
+        android:layout_marginEnd="42dp"
+        android:layout_marginBottom="8dp"
+        android:gravity="center_vertical"
+        android:text="Interest Rate (%)"
+        android:textAlignment="textEnd"
+        app:layout_constraintBottom_toTopOf="@+id/textView4"
+        app:layout_constraintEnd_toStartOf="@+id/txtInterestRate"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView3" />
+
+    <EditText
+        android:id="@+id/txtInterestRate"
+        android:layout_width="150dp"
+        android:layout_height="48dp"
+        android:layout_marginEnd="54dp"
+        android:layout_marginBottom="8dp"
+        android:ems="10"
+        android:hint="Interest Rate"
+        android:inputType="numberDecimal"
+        app:layout_constraintBottom_toTopOf="@+id/txtPaymentAmt"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtCurrentBal" />
+
+    <Button
+        android:id="@+id/btnSave"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="270dp"
+        android:onClick="onSaveClick"
+        android:text="Save"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/btnCancel"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView4"
+        app:layout_constraintVertical_bias="0.882" />
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="22dp"
+        android:layout_marginEnd="19dp"
+        android:layout_marginBottom="40dp"
+        android:text="Account Type"
+        app:layout_constraintBottom_toTopOf="@+id/textView"
+        app:layout_constraintEnd_toStartOf="@+id/grpAccountType"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btnCancel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="270dp"
+        android:onClick="onCancelClick"
+        android:text="Cancel"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/btnShow"
+        app:layout_constraintStart_toEndOf="@+id/btnSave"
+        app:layout_constraintTop_toBottomOf="@+id/txtPaymentAmt"
+        app:layout_constraintVertical_bias="0.894" />
+
+    <Button
+        android:id="@+id/btnShow"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="56dp"
+        android:layout_marginBottom="270dp"
+        android:onClick="onViewClick"
+        android:text="View"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/btnCancel"
+        app:layout_constraintTop_toBottomOf="@+id/txtPaymentAmt"
+        app:layout_constraintVertical_bias="0.894" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
